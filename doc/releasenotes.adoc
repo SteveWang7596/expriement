@@ -1,0 +1,39 @@
+:app_name: QRClientJunction
+:current_version: 1.0.00
+
+= Release Notes - {app_name} - Version {current_version}
+
+== Overview
+
+This interface allows the QR Partner to integrate to TJ for the purpose of obtaining transaction information. This information is used to submit transactions to the QR Partner's acquiring bank. Additionally, TJ needs to be notified of the outcome of these transactions using this interface.
+
+== Version 1.1.01
+
+The following changes are included:
+
+*	DEL-1628 - QR Client Junction not PCI compliant (Zapper)
+**	TLS protocols can now be configured, default set to TLSv1.2
+
+== Version 1.1.00
+
+The following changes are included:
+
+*	DEL-1273 - Refresh of junctions  does not properly release/close resources
+**	ImbekoWebAPILib now closes resources on verticle stop() that previously caused objects to not be freed.
+
+== Version 1.0.01
+
+The following changes are included:
+
+*	DEL-270: Add support for TraceServer tracing to the QR Client Junction.
+**	Added TraceServer implementation to junction.
+*   DEL-350: QRClientJunction doesn't listen on configured port after refresh
+**  Reworked Undertow server deployment to work correctly with new refresh mechanism.
+*	DEL-1255: Place the YAML files for the release builds of our QR Junctions on Jenkins
+**	Updated pom to include OAS in target folder.
+
+== Version 1.0.00
+
+This is the first release of {app_name}.
+
+Last built on {localdatetime}

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+	<jmxConfigurator />
+
+	<appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>logs/QRClientJunction.log</file>
+		<encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+			<Pattern>#/\\__/\\__/\\__ %d{yyyy-MM-dd HH:mm:ss.SSS} \(%property{HOSTNAME}\) %-5level %marker\n\t\t%logger{30} - %msg%n</Pattern>
+		</encoder>
+
+		<rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+			<FileNamePattern>logs/QRClientJunction.%i.log</FileNamePattern>
+			<MinIndex>1</MinIndex>
+			<MaxIndex>20</MaxIndex>
+		</rollingPolicy>
+
+		<triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+			<MaxFileSize>250MB</MaxFileSize>
+		</triggeringPolicy>
+	</appender>
+	
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>#/\\__/\\__/\\__ %d{yyyy-MM-dd HH:mm:ss.SSS} \(%property{HOSTNAME}\) %-5level %marker\n\t\t%logger{30} - %msg%n</pattern>
+		</encoder>
+	</appender>
+	
+	<appender name="DB" 		
+		class="za.co.transactionjunction.imbeko.eventslog.DBAppenderImbeko">
+		
+		<connectionSource class="ch.qos.logback.core.db.DataSourceConnectionSource">
+			<dataSource class="com.mchange.v2.c3p0.ComboPooledDataSource">
+				<driverClass>net.sourceforge.jtds.jdbc.Driver</driverClass>
+				<jdbcUrl>jdbc:jtds:sqlserver://_$__IMBEKO_EVENT_DATABASE_SQLSERVER_HOST_$_:_$__IMBEKO_EVENT_DATABASE_SQLSERVER_PORT_$_/tj_event_log;useLOBs=false;appName=QRClientJunction</jdbcUrl>
+			</dataSource>
+		</connectionSource>
+		
+		<filter class="ch.qos.logback.core.filter.EvaluatorFilter">      
+			<evaluator> <!-- defaults to type ch.qos.logback.classic.boolex.JaninoEventEvaluator -->
+				<expression>
+					return 
+						(
+							marker != null 
+							&amp;&amp; 
+							(
+								marker.contains("OPERATIONAL_ALERT")
+								|| marker.contains("SOFTWARE_FAULT")
+								|| marker.contains("CONFIGURATION_FAULT")
+								|| marker.contains("DATABASE_FAULT")
+							)
+						);
+				</expression>
+			</evaluator>
+			<OnMismatch>DENY</OnMismatch>
+			<OnMatch>NEUTRAL</OnMatch>
+		</filter>
+		
+	</appender>
+	
+	<appender name="ASYNC" class="ch.qos.logback.classic.AsyncAppender">
+		<queueSize>5000</queueSize>
+		<appender-ref ref="DB" />
+	</appender>
+	
+	<logger name="com.mchange" level="WARN" />
+	<logger name="io.netty" level="WARN" />
+	<logger name="io.netty.handler.logging.LoggingHandler" level="INFO" />
+	<logger name="io.vertx.core.net.impl" level="INFO" />
+	<logger name="com.hazelcast" level="INFO" />
+	<logger name="com.networknt.schema" level="INFO" />
+	
+	<logger name="za.co.transactionjunction.qrclientjunction" level="INFO" />
+	<logger name="za.co.transactionjunction.openapi" level="INFO" />
+	<logger name="za.co.transactionjunction.imbeko.comms" level="INFO" />
+
+	<root level="INFO">
+		<appender-ref ref="FILE" />
+		<appender-ref ref="ASYNC" />
+	</root>
+	
+</configuration>

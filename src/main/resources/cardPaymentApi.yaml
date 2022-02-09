@@ -1,0 +1,58 @@
+openapi: 3.0.2
+info:
+  title: "Card Payment API"
+  version: "1.0.00"
+  description: |
+    # Overview
+    This interface must be implemented to accepts and send Iso20022 financial transactions to and from TJ.
+    
+  contact:
+    name: Transaction Junction
+    url: 'http://www.transactionjunction.co.za'
+    email: cardpaymnetapi-integration@switch.tj
+security: 
+  - ApiKey: []
+paths:
+  /v1/AcceptorAuthorisation:
+    post:
+      summary: The AcceptorAuthorisationRequest message is sent by an acceptor (or its agent) to the acquirer (or its agent), to check with the issuer (or its agent) that the account associated to the card has the resources to fund the payment. This checking will include validation of the card data and any additional transaction data provided.
+      operationId: authorisation
+      requestBody:
+        required: true
+        content:
+          application/json:   
+            schema:
+             $ref: 'AcceptorAuthorisationRequest.json#/AcceptorAuthoisationRequestV09'
+             #$ref: 'request.json#/AcceptorAuthoisationRequestV09'
+          application/xml:
+            schema:
+             #$ref: 'request.json#/AcceptorAuthoisationRequestV09'
+             $ref: 'AcceptorAuthorisationRequest.json#/AcceptorAuthoisationRequestV09'
+          
+      responses:
+        '200':
+          description: Transaction Reversal
+          content:
+            application/json:   
+              schema:
+                $ref: 'AcceptorAuthorisationResponse.json#/AcceptorAuthorisationResponseV09'
+                #$ref: 'request.json#/AcceptorAuthorisationResponseV09'
+            application/xml:   
+              schema:
+                $ref: 'AcceptorAuthorisationResponse.json#/AcceptorAuthorisationResponseV09'
+                #$ref: 'request.json#/AcceptorAuthorisationResponseV09'
+        default:
+          description: Error information
+          content:
+            application/json:
+              schema:
+                $ref: 'AcceptorAuthorisationResponse.json#/AcceptorAuthorisationResponseV09'
+                #$ref: 'request.json#/AcceptorAuthorisationResponseV09'
+                
+components:
+  securitySchemes:
+    ApiKey:
+      type: apiKey
+      in: header
+      name: X-Api-Key
+      description: The API key value will be provided by Transaction Junction. It should be provided in the header X-Api-Key.

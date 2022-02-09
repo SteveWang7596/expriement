@@ -1,0 +1,155 @@
+
+:app_name: QRClientJunction
+:version: 1.0
+:toc:
+:sectnums:
+:numbered:
+:icons:
+:data-uri:
+
+== Introduction
+
+The {app_name} allows the QR Partner to integrate to TJ for the purpose of obtaining transaction information. This information is used to submit transactions to the QR Partner's acquiring bank. Additionally, TJ needs to be notified of the outcome of these transactions using this interface.
+     
+The QR Partner needs to generate a client from this specification to connect to TJ.
+
+The {app_name} converts GetTransactionInfo and TransactionNotification messages as defined in the QR-To-TJ.yaml 
+OpenApi Specification to the Transaction Junction Iso8583Imbeko format.
+  
+This allows traffic to be sent to and received from entities which implement the QR-To-TJ specification.
+
+ 
+
+The following features are supported in {app_name} version {version}:
+
+ 
+
+*    Sending and receiving the following message types from the customer 
+**    GetTransactionInfo, TransactionNotification
+*    Sending of the following Iso8583Imbeko message types 
+**    0600(getInfoRequest),0600(postTransactionNotification), 0420
+*    Receiving of the following Iso8583Imbeko message types
+**    0610(getInfoResponse),0610(TransactionNotificationResponse), 0430
+
+== Configuration 
+
+The standard configuration for junctions is required, briefly:
+
+=== Configuration files:
+
+*	config.json
+*	logback.xml
+*	cluster.xml
+
+NOTE: Configuration template files can be found in {app_name}'s bin/config-templates directory.
+
+The rest of this section will provide more details on each configuration file.
+
+==== config.json
+
+Set "junction_name" to a descriptive name for the junction.
+Example:
+....
+"junction_name": "QR_Client_Junction",
+....
+
+Specify a list of Trace Servers that this junction will send trace messages to.
+
+Example:
+....
+"trace.client.tcp.servers": [ { "host":"196.31.10.100", "port":2828 } ]
+....
+
+{app_name} requires a config data manager to be configured that points at the Imbeko configuration database.
+
+Example:
+....
+"jdbc_managers":
+[     
+	{
+		"id":"config",
+		"driver_class": "net.sourceforge.jtds.jdbc.Driver",			
+		"url": "jdbc:jtds:sqlserver://localhost:1433/tj_configuration;useLOBs=false;"
+	}
+]
+....
+
+==== logback.xml
+
+This file is mostly standard, the template file should probably be used as-is. Please note the following logger:
+....
+<logger name="com.networknt.schema" level="WARN" />
+....
+This logger outputs information about field validation and is very verbose. It is therefore set to WARN.
+
+==== cluster.xml
+
+This file is standard, the template file should be used as-is.
+Ensure that all Imbeko junction services - as well as VertManager - use the same cluster.xml file, otherwise some services will not be able to join the cluster.
+
+=== Database configuration
+
+==== Instance Properties:
+
+.Descriptions of instance properties
+|===
+|*Config key* |*Description*
+|host
+|Default value is localhost. The hostname to which the HTTP server should bind when publishing the API.
+
+|port
+|Default value is 8080. The port on which the HTTP server should listen.
+
+|use_http_compression
+|Default value is 0. Set to 1 if compression should be used. Set to 0 if compression should not be used.
+
+|keystore_path
+|Default value is null. Set to the path of the server.keystore file for the HTTP server. If not set then TLS will not be available.
+
+|truststore_path
+|Default value is null. Set to the path of the server.truststore file for the HTTP server.
+
+|keystore_password
+|Default value is null. String containing the keystore password. If not set then TLS will not be available.
+
+|truststore_password
+|Default value is null. String containing the truststore password. If not set then TLS will not be available.
+
+|tls_protocols
+|Default value is TLSv1.2. String containing a comma-separated list of TLS protocols that are enabled/supported. Example: TLSv1.2,TLSv1.3
+
+|===
+
+==== Database Tables
+
+The {app_name} installs various tables within the tj_configuration database that need to be correctly configured.
+
+===== imbekowebapi_customers
+
+Customers need to be configured with their associated API key in the database to allow transactions to be authorized by the application.
+
+|===
+|*Column* |*Description*
+|instance_id
+|The instance ID of the junction.
+
+|customer
+|The customer. +
+Used in Customer(Iso8583Imbeko field 118).
+
+|api_key_reference
+|The API key reference for this customer.
+
+|api_key_hash
+|The API key hash for this customer.
+
+|api_key_salt
+|The API key salt for this customer used to provide extra security to the API key.
+
+|===
+
+== Troubleshooting
+
+
+
+Last built on {localdatetime}

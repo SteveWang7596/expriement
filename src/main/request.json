@@ -1,0 +1,58 @@
+{
+  "openapi": "3.0.2",
+  "info": {
+    "title": "Card Payment API",
+    "version": "1.0.00",
+    "description": "# Overview\nRequest.\n",
+    "contact": {
+      "name": "Transaction Junction",
+      "url": "http://www.transactionjunction.co.za",
+      "email": "cardpaymnetapi-integration@switch.tj"
+    }
+  },
+  "paths": {},
+  "components" : {
+    "schemas" : {
+      "AcceptorAuthoisationRequestV09": {
+        "type": "object",
+        "properties": {
+          "header": {
+            "$ref": "#/components/schemas/Header"
+          },
+          "authorisationRequest": {
+            "$ref": "#/components/schemas/AuthorisationRequest"
+          },
+          "securityTrailer": {
+            "$ref": "#/components/schemas/SecurityTrailer"
+          }
+        }
+      },
+      "AcceptorAuthorisationResponseV09": {
+        "type": "object",
+        "properties": {
+          "header": {
+            "$ref": "#/components/schemas/Header"
+          },
+          "authoirsationResponse": {
+            "$ref": "#/components/schemas/AuthorisationResponse"
+          },
+          "securityTrailer": {
+            "$ref": "#/components/schemas/SecurityTrailer"
+          }
+        }
+      },
+      "Header": {
+        "type": "string"
+      },
+      "AuthorisationRequest": {
+        "type": "string"
+      },
+      "AuthorisationResponse": {
+        "type": "string"
+      },
+      "SecurityTrailer": {
+        "type": "string"
+      }
+    }
+  }
+}

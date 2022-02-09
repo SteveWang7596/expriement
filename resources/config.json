@@ -1,0 +1,19 @@
+{
+	"junction_name" : "QRClientJunction",
+
+	"trace.client.tcp.servers": [ { "host":"_$_TRACE_SERVER_IP_$_", "port":_$_TRACE_SERVER_PORT_$_ } ],
+	
+	"jdbc_managers":
+	[
+		{
+			"id":"audit",
+			"driver_class": "net.sourceforge.jtds.jdbc.Driver",
+			"url": "jdbc:jtds:sqlserver://_$_IMBEKO_AUDIT_DATABASE_SQLSERVER_HOST_$_:_$_IMBEKO_AUDIT_DATABASE_SQLSERVER_PORT_$_/tj_audit;useLOBs=false;appName=QRClientJunction"
+		},
+		{
+			"id":"config",
+			"driver_class": "net.sourceforge.jtds.jdbc.Driver",
+			"url": "jdbc:jtds:sqlserver://_$_IMBEKO_CFG_DATABASE_SQLSERVER_HOST_$_:_$_IMBEKO_CFG_DATABASE_SQLSERVER_PORT_$_/tj_configuration;useLOBs=false;appName=QRClientJunction"
+		}
+	]
+}

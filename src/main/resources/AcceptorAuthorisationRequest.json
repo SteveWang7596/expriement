@@ -1,0 +1,3635 @@
+{
+  "AcceptorAuthoisationRequestV09": {
+    "type": "object",
+    "id": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:AcceptorAuthorisationRequestV09",
+    "properties": {
+      "hdr": {
+        "type": "object",
+        "id": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:Header58",
+        "properties": {
+          "msgFctn": {
+            "type": "string",
+            "enum": [
+              "AUTQ",
+              "AUTP",
+              "CCAV",
+              "CCAK",
+              "CCAQ",
+              "CCAP",
+              "CMPV",
+              "CMPK",
+              "DCAV",
+              "DCRR",
+              "DCCQ",
+              "DCCP",
+              "DGNP",
+              "DGNQ",
+              "FAUQ",
+              "FAUP",
+              "FCMV",
+              "FCMK",
+              "FRVA",
+              "FRVR",
+              "RCLQ",
+              "RCLP",
+              "RVRA",
+              "RVRR",
+              "CDDQ",
+              "CDDK",
+              "CDDR",
+              "CDDP",
+              "TRNR",
+              "TRNA"
+            ]
+          },
+          "prtcolVrsn": {
+            "type": "string"
+          },
+          "xchgId": {
+            "type": "number"
+          },
+          "reTrnsmssnCntr": {
+            "type": "string"
+          },
+          "creDtTm": {
+            "type": "integer",
+            "format": "utc-millisec"
+          },
+          "initgPty": {
+            "type": "object",
+            "id": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:GenericIdentification176",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "tp": {
+                "type": "string",
+                "enum": [
+                  "OPOI",
+                  "MERC",
+                  "ACCP",
+                  "ITAG",
+                  "ACQR",
+                  "CISS",
+                  "DLIS",
+                  "MTMG",
+                  "TAXH",
+                  "TMGT"
+                ]
+              },
+              "issr": {
+                "type": "string",
+                "enum": [
+                  "OPOI",
+                  "MERC",
+                  "ACCP",
+                  "ITAG",
+                  "ACQR",
+                  "CISS",
+                  "DLIS",
+                  "MTMG",
+                  "TAXH",
+                  "TMGT"
+                ]
+              },
+              "ctry": {
+                "type": "string"
+              },
+              "shrtNm": {
+                "type": "string"
+              }
+            }
+          },
+          "rcptPty": {
+            "type": "object",
+            "id": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:GenericIdentification177",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "tp": {
+                "type": "string",
+                "enum": [
+                  "OPOI",
+                  "MERC",
+                  "ACCP",
+                  "ITAG",
+                  "ACQR",
+                  "CISS",
+                  "DLIS",
+                  "MTMG",
+                  "TAXH",
+                  "TMGT"
+                ]
+              },
+              "issr": {
+                "type": "string",
+                "enum": [
+                  "OPOI",
+                  "MERC",
+                  "ACCP",
+                  "ITAG",
+                  "ACQR",
+                  "CISS",
+                  "DLIS",
+                  "MTMG",
+                  "TAXH",
+                  "TMGT"
+                ]
+              },
+              "ctry": {
+                "type": "string"
+              },
+              "shrtNm": {
+                "type": "string"
+              },
+              "rmotAccs": {
+                "type": "object",
+                "id": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:NetworkParameters7",
+                "properties": {
+                  "adr": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "id": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:NetworkParameters9",
+                      "properties": {
+                        "ntwkTp": {
+                          "type": "string",
+                          "enum": [
+                            "IPNW",
+                            "PSTN"
+                          ]
+                        },
+                        "adrVal": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  },
+                  "usrNm": {
+                    "type": "string"
+                  },
+                  "accsCd": {
+                    "type": "array",
+                    "items": {
+                      "type": "integer"
+                    }
+                  },
+                  "svrCert": {
+                    "type": "array",
+                    "items": {
+                      "type": "array",
+                      "items": {
+                        "type": "integer"
+                      }
+                    }
+                  },
+                  "svrCertIdr": {
+                    "type": "array",
+                    "items": {
+                      "type": "array",
+                      "items": {
+                        "type": "integer"
+                      }
+                    }
+                  },
+                  "clntCert": {
+                    "type": "array",
+                    "items": {
+                      "type": "array",
+                      "items": {
+                        "type": "integer"
+                      }
+                    }
+                  },
+                  "sctyPrfl": {
+                    "type": "string"
+                  }
+                }
+              },
+              "glctn": {
+                "type": "object",
+                "id": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:Geolocation1",
+                "properties": {
+                  "geogcCordints": {
+                    "type": "object",
+                    "id": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:GeolocationGeographicCoordinates1",
+                    "properties": {
+                      "lat": {
+                        "type": "string"
+                      },
+                      "long": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "utmcordints": {
+                    "type": "object",
+                    "id": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:GeolocationUTMCoordinates1",
+                    "properties": {
+                      "utmzone": {
+                        "type": "string"
+                      },
+                      "utmestwrd": {
+                        "type": "string"
+                      },
+                      "utmnrthwrd": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "tracblt": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "id": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:Traceability8",
+              "properties": {
+                "rlayId": {
+                  "type": "object",
+                  "$ref": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:GenericIdentification177"
+                },
+                "prtcolNm": {
+                  "type": "string"
+                },
+                "prtcolVrsn": {
+                  "type": "string"
+                },
+                "tracDtTmIn": {
+                  "type": "integer",
+                  "format": "utc-millisec"
+                },
+                "tracDtTmOut": {
+                  "type": "integer",
+                  "format": "utc-millisec"
+                }
+              }
+            }
+          }
+        }
+      },
+      "authstnReq": {
+        "type": "object",
+        "id": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:AcceptorAuthorisationRequest9",
+        "properties": {
+          "envt": {
+            "type": "object",
+            "id": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:CardPaymentEnvironment74",
+            "properties": {
+              "acqrr": {
+                "type": "object",
+                "id": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:Acquirer10",
+                "properties": {
+                  "id": {
+                    "type": "object",
+                    "$ref": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:GenericIdentification177"
+                  },
+                  "paramsVrsn": {
+                    "type": "string"
+                  }
+                }
+              },
+              "mrchnt": {
+                "type": "object",
+                "id": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:Organisation32",
+                "properties": {
+                  "id": {
+                    "type": "object",
+                    "id": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:GenericIdentification32",
+                    "properties": {
+                      "id": {
+                        "type": "string"
+                      },
+                      "tp": {
+                        "type": "string",
+                        "enum": [
+                          "OPOI",
+                          "MERC",
+                          "ACCP",
+                          "ITAG",
+                          "ACQR",
+                          "CISS",
+                          "DLIS"
+                        ]
+                      },
+                      "issr": {
+                        "type": "string",
+                        "enum": [
+                          "MERC",
+                          "ACCP",
+                          "ITAG",
+                          "ACQR",
+                          "CISS",
+                          "TAXH"
+                        ]
+                      },
+                      "shrtNm": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "cmonNm": {
+                    "type": "string"
+                  },
+                  "lctnCtgy": {
+                    "type": "string",
+                    "enum": [
+                      "FIXD",
+                      "ABRD",
+                      "NMDC",
+                      "MOTO",
+                      "HOME"
+                    ]
+                  },
+                  "lctnAndCtct": {
+                    "type": "object",
+                    "id": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:CommunicationAddress9",
+                    "properties": {
+                      "pstlAdr": {
+                        "type": "object",
+                        "id": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:PostalAddress22",
+                        "properties": {
+                          "adrTp": {
+                            "type": "string",
+                            "enum": [
+                              "ADDR",
+                              "PBOX",
+                              "HOME",
+                              "BIZZ",
+                              "MLTO",
+                              "DLVY"
+                            ]
+                          },
+                          "dept": {
+                            "type": "string"
+                          },
+                          "subDept": {
+                            "type": "string"
+                          },
+                          "adrLine": {
+                            "type": "array",
+                            "items": {
+                              "type": "string"
+                            }
+                          },
+                          "strtNm": {
+                            "type": "string"
+                          },
+                          "bldgNb": {
+                            "type": "string"
+                          },
+                          "pstCd": {
+                            "type": "string"
+                          },
+                          "twnNm": {
+                            "type": "string"
+                          },
+                          "ctrySubDvsn": {
+                            "type": "array",
+                            "items": {
+                              "type": "string"
+                            }
+                          },
+                          "ctryCd": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "email": {
+                        "type": "string"
+                      },
+                      "phne": {
+                        "type": "string"
+                      },
+                      "cstmrSvc": {
+                        "type": "string"
+                      },
+                      "addtlCtctInf": {
+                        "type": "string"
+                      },
+                      "urladr": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "schmeData": {
+                    "type": "string"
+                  }
+                }
+              },
+              "poi": {
+                "type": "object",
+                "id": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:PointOfInteraction10",
+                "properties": {
+                  "id": {
+                    "type": "object",
+                    "$ref": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:GenericIdentification177"
+                  },
+                  "sysNm": {
+                    "type": "string"
+                  },
+                  "grpId": {
+                    "type": "string"
+                  },
+                  "cpblties": {
+                    "type": "object",
+                    "id": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:PointOfInteractionCapabilities9",
+                    "properties": {
+                      "cardRdngCpblties": {
+                        "type": "array",
+                        "items": {
+                          "type": "string",
+                          "enum": [
+                            "TAGC",
+                            "PHYS",
+                            "BRCD",
+                            "MGST",
+                            "CICC",
+                            "DFLE",
+                            "CTLS",
+                            "ECTL",
+                            "CDFL",
+                            "SICC",
+                            "UNKW",
+                            "QRCD",
+                            "OPTC"
+                          ]
+                        }
+                      },
+                      "crdhldrVrfctnCpblties": {
+                        "type": "array",
+                        "items": {
+                          "type": "string",
+                          "enum": [
+                            "APKI",
+                            "CHDT",
+                            "MNSG",
+                            "MNVR",
+                            "FBIG",
+                            "FBIO",
+                            "FDSG",
+                            "FCPN",
+                            "FEPN",
+                            "NPIN",
+                            "PKIS",
+                            "SCEC",
+                            "NBIO",
+                            "NOVF",
+                            "OTHR"
+                          ]
+                        }
+                      },
+                      "apprvlCdLngth": {
+                        "type": "number"
+                      },
+                      "mxScrptLngth": {
+                        "type": "number"
+                      },
+                      "cardCaptrCpbl": {
+                        "type": "boolean"
+                      },
+                      "onLineCpblties": {
+                        "type": "string",
+                        "enum": [
+                          "OFLN",
+                          "ONLN",
+                          "SMON"
+                        ]
+                      },
+                      "msgCpblties": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "id": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:DisplayCapabilities4",
+                          "properties": {
+                            "dstn": {
+                              "type": "array",
+                              "items": {
+                                "type": "string",
+                                "enum": [
+                                  "CDSP",
+                                  "CRCP",
+                                  "MDSP",
+                                  "MRCP",
+                                  "CRDO"
+                                ]
+                              }
+                            },
+                            "avlblFrmt": {
+                              "type": "array",
+                              "items": {
+                                "type": "string",
+                                "enum": [
+                                  "MREF",
+                                  "TEXT",
+                                  "HTML"
+                                ]
+                              }
+                            },
+                            "nbOfLines": {
+                              "type": "number"
+                            },
+                            "lineWidth": {
+                              "type": "number"
+                            },
+                            "avlblLang": {
+                              "type": "array",
+                              "items": {
+                                "type": "string"
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "pinlngthCpblties": {
+                        "type": "number"
+                      }
+                    }
+                  },
+                  "tmZone": {
+                    "type": "string"
+                  },
+                  "termnlIntgtn": {
+                    "type": "string",
+                    "enum": [
+                      "INDR",
+                      "IPMP",
+                      "MPOI",
+                      "MPMP",
+                      "MSLE",
+                      "SSLE",
+                      "VNDG"
+                    ]
+                  },
+                  "cmpnt": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "id": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:PointOfInteractionComponent10",
+                      "properties": {
+                        "tp": {
+                          "type": "string",
+                          "enum": [
+                            "AQPP",
+                            "APPR",
+                            "TLPR",
+                            "SCPR",
+                            "SERV",
+                            "TERM",
+                            "DVCE",
+                            "SECM",
+                            "APLI",
+                            "EMVK",
+                            "EMVO",
+                            "MDWR",
+                            "DRVR",
+                            "OPST",
+                            "MRPR",
+                            "CRTF",
+                            "TMSP",
+                            "SACP",
+                            "SAPR",
+                            "LOGF",
+                            "MDFL",
+                            "SOFT",
+                            "CONF",
+                            "RPFL"
+                          ]
+                        },
+                        "subTpInf": {
+                          "type": "string"
+                        },
+                        "id": {
+                          "type": "object",
+                          "id": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:PointOfInteractionComponentIdentification1",
+                          "properties": {
+                            "itmNb": {
+                              "type": "string"
+                            },
+                            "prvdrId": {
+                              "type": "string"
+                            },
+                            "id": {
+                              "type": "string"
+                            },
+                            "srlNb": {
+                              "type": "string"
+                            }
+                          }
+                        },
+                        "sts": {
+                          "type": "object",
+                          "id": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:PointOfInteractionComponentStatus3",
+                          "properties": {
+                            "vrsnNb": {
+                              "type": "string"
+                            },
+                            "sts": {
+                              "type": "string",
+                              "enum": [
+                                "WAIT",
+                                "OUTD",
+                                "OPER",
+                                "DACT"
+                              ]
+                            },
+                            "xpryDt": {
+                              "type": "integer",
+                              "format": "utc-millisec"
+                            }
+                          }
+                        },
+                        "stdCmplc": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "id": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:GenericIdentification48",
+                            "properties": {
+                              "id": {
+                                "type": "string"
+                              },
+                              "vrsn": {
+                                "type": "string"
+                              },
+                              "issr": {
+                                "type": "string"
+                              }
+                            }
+                          }
+                        },
+                        "chrtcs": {
+                          "type": "object",
+                          "id": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:PointOfInteractionComponentCharacteristics6",
+                          "properties": {
+                            "mmry": {
+                              "type": "array",
+                              "items": {
+                                "type": "object",
+                                "id": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:MemoryCharacteristics1",
+                                "properties": {
+                                  "id": {
+                                    "type": "string"
+                                  },
+                                  "ttlSz": {
+                                    "type": "number"
+                                  },
+                                  "freeSz": {
+                                    "type": "number"
+                                  },
+                                  "unit": {
+                                    "type": "string",
+                                    "enum": [
+                                      "BYTE",
+                                      "EXAB",
+                                      "GIGA",
+                                      "KILO",
+                                      "MEGA",
+                                      "PETA",
+                                      "TERA"
+                                    ]
+                                  }
+                                }
+                              }
+                            },
+                            "com": {
+                              "type": "array",
+                              "items": {
+                                "type": "object",
+                                "id": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:CommunicationCharacteristics5",
+                                "properties": {
+                                  "comTp": {
+                                    "type": "string",
+                                    "enum": [
+                                      "BLTH",
+                                      "ETHR",
+                                      "GPRS",
+                                      "GSMF",
+                                      "PSTN",
+                                      "RS_23",
+                                      "USBD",
+                                      "USBH",
+                                      "WIFI",
+                                      "WT_2_G",
+                                      "WT_3_G",
+                                      "WT_4_G",
+                                      "WT_5_G"
+                                    ]
+                                  },
+                                  "rmotPty": {
+                                    "type": "array",
+                                    "items": {
+                                      "type": "string",
+                                      "enum": [
+                                        "ACQR",
+                                        "ITAG",
+                                        "PCPT",
+                                        "TMGT",
+                                        "SALE"
+                                      ]
+                                    }
+                                  },
+                                  "actv": {
+                                    "type": "boolean"
+                                  },
+                                  "params": {
+                                    "type": "object",
+                                    "$ref": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:NetworkParameters7"
+                                  },
+                                  "physIntrfc": {
+                                    "type": "object",
+                                    "id": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:PhysicalInterfaceParameter1",
+                                    "properties": {
+                                      "intrfcNm": {
+                                        "type": "string"
+                                      },
+                                      "intrfcTp": {
+                                        "type": "string",
+                                        "enum": [
+                                          "BLTH",
+                                          "ETHR",
+                                          "GPRS",
+                                          "GSMF",
+                                          "PSTN",
+                                          "RS_23",
+                                          "USBD",
+                                          "USBH",
+                                          "WIFI",
+                                          "WT_2_G",
+                                          "WT_3_G",
+                                          "WT_4_G",
+                                          "WT_5_G"
+                                        ]
+                                      },
+                                      "usrNm": {
+                                        "type": "string"
+                                      },
+                                      "accsCd": {
+                                        "type": "array",
+                                        "items": {
+                                          "type": "integer"
+                                        }
+                                      },
+                                      "sctyPrfl": {
+                                        "type": "string"
+                                      },
+                                      "addtlParams": {
+                                        "type": "array",
+                                        "items": {
+                                          "type": "integer"
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "sctyAccsMdls": {
+                              "type": "number"
+                            },
+                            "sbcbrIdntyMdls": {
+                              "type": "number"
+                            },
+                            "sctyElmt": {
+                              "type": "array",
+                              "items": {
+                                "type": "object",
+                                "id": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:CryptographicKey14",
+                                "properties": {
+                                  "id": {
+                                    "type": "string"
+                                  },
+                                  "addtlId": {
+                                    "type": "array",
+                                    "items": {
+                                      "type": "integer"
+                                    }
+                                  },
+                                  "nm": {
+                                    "type": "string"
+                                  },
+                                  "sctyPrfl": {
+                                    "type": "string"
+                                  },
+                                  "itmNb": {
+                                    "type": "string"
+                                  },
+                                  "vrsn": {
+                                    "type": "string"
+                                  },
+                                  "tp": {
+                                    "type": "string",
+                                    "enum": [
+                                      "AES_2",
+                                      "EDE_3",
+                                      "DKP_9",
+                                      "AES_9",
+                                      "AES_5",
+                                      "EDE_4"
+                                    ]
+                                  },
+                                  "fctn": {
+                                    "type": "array",
+                                    "items": {
+                                      "type": "string",
+                                      "enum": [
+                                        "ENCR",
+                                        "DCPT",
+                                        "DENC",
+                                        "DDEC",
+                                        "TRNI",
+                                        "TRNX",
+                                        "MACG",
+                                        "MACV",
+                                        "SIGG",
+                                        "SUGV",
+                                        "PINE",
+                                        "PIND",
+                                        "PINV",
+                                        "KEYG",
+                                        "KEYI",
+                                        "KEYX",
+                                        "KEYD"
+                                      ]
+                                    }
+                                  },
+                                  "actvtnDt": {
+                                    "type": "integer",
+                                    "format": "utc-millisec"
+                                  },
+                                  "deactvtnDt": {
+                                    "type": "integer",
+                                    "format": "utc-millisec"
+                                  },
+                                  "keyVal": {
+                                    "type": "object",
+                                    "id": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:ContentInformationType23",
+                                    "properties": {
+                                      "cnttTp": {
+                                        "type": "string",
+                                        "enum": [
+                                          "DATA",
+                                          "SIGN",
+                                          "EVLP",
+                                          "DGST",
+                                          "AUTH"
+                                        ]
+                                      },
+                                      "envlpdData": {
+                                        "type": "object",
+                                        "id": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:EnvelopedData7",
+                                        "properties": {
+                                          "vrsn": {
+                                            "type": "number"
+                                          },
+                                          "orgtrInf": {
+                                            "type": "object",
+                                            "id": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:OriginatorInformation1",
+                                            "properties": {
+                                              "cert": {
+                                                "type": "array",
+                                                "items": {
+                                                  "type": "array",
+                                                  "items": {
+                                                    "type": "integer"
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          },
+                                          "rcpt": {
+                                            "type": "array",
+                                            "items": {
+                                              "type": "object",
+                                              "id": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:Recipient8Choice",
+                                              "properties": {
+                                                "keyTrnsprt": {
+                                                  "type": "object",
+                                                  "id": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:KeyTransport5",
+                                                  "properties": {
+                                                    "vrsn": {
+                                                      "type": "number"
+                                                    },
+                                                    "rcptId": {
+                                                      "type": "object",
+                                                      "id": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:Recipient5Choice",
+                                                      "properties": {
+                                                        "issrAndSrlNb": {
+                                                          "type": "object",
+                                                          "id": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:IssuerAndSerialNumber1",
+                                                          "properties": {
+                                                            "issr": {
+                                                              "type": "object",
+                                                              "id": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:CertificateIssuer1",
+                                                              "properties": {
+                                                                "rltvDstngshdNm": {
+                                                                  "type": "array",
+                                                                  "items": {
+                                                                    "type": "object",
+                                                                    "id": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:RelativeDistinguishedName1",
+                                                                    "properties": {
+                                                                      "attrTp": {
+                                                                        "type": "string",
+                                                                        "enum": [
+                                                                          "CNAT",
+                                                                          "LATT",
+                                                                          "OATT",
+                                                                          "OUAT",
+                                                                          "CATT"
+                                                                        ]
+                                                                      },
+                                                                      "attrVal": {
+                                                                        "type": "string"
+                                                                      }
+                                                                    }
+                                                                  }
+                                                                }
+                                                              }
+                                                            },
+                                                            "srlNb": {
+                                                              "type": "array",
+                                                              "items": {
+                                                                "type": "integer"
+                                                              }
+                                                            }
+                                                          }
+                                                        },
+                                                        "keyIdr": {
+                                                          "type": "object",
+                                                          "id": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:KEKIdentifier2",
+                                                          "properties": {
+                                                            "keyId": {
+                                                              "type": "string"
+                                                            },
+                                                            "keyVrsn": {
+                                                              "type": "string"
+                                                            },
+                                                            "seqNb": {
+                                                              "type": "number"
+                                                            },
+                                                            "derivtnId": {
+                                                              "type": "array",
+                                                              "items": {
+                                                                "type": "integer"
+                                                              }
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    },
+                                                    "keyNcrptnAlgo": {
+                                                      "type": "object",
+                                                      "id": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:AlgorithmIdentification19",
+                                                      "properties": {
+                                                        "algo": {
+                                                          "type": "string",
+                                                          "enum": [
+                                                            "ERSA",
+                                                            "RSAO"
+                                                          ]
+                                                        },
+                                                        "param": {
+                                                          "type": "object",
+                                                          "id": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:Parameter10",
+                                                          "properties": {
+                                                            "ncrptnFrmt": {
+                                                              "type": "string",
+                                                              "enum": [
+                                                                "TR_31",
+                                                                "TR_34",
+                                                                "I_238"
+                                                              ]
+                                                            },
+                                                            "dgstAlgo": {
+                                                              "type": "string",
+                                                              "enum": [
+                                                                "HS_25",
+                                                                "HS_38",
+                                                                "HS_51",
+                                                                "HS_01",
+                                                                "SH_31",
+                                                                "SH_32",
+                                                                "SH_33",
+                                                                "SH_35",
+                                                                "SHK_1",
+                                                                "SHK_2"
+                                                              ]
+                                                            },
+                                                            "mskGnrtrAlgo": {
+                                                              "type": "object",
+                                                              "id": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:AlgorithmIdentification18",
+                                                              "properties": {
+                                                                "algo": {
+                                                                  "type": "string",
+                                                                  "enum": [
+                                                                    "MGF_1"
+                                                                  ]
+                                                                },
+                                                                "param": {
+                                                                  "type": "object",
+                                                                  "id": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:Parameter9",
+                                                                  "properties": {
+                                                                    "dgstAlgo": {
+                                                                      "type": "string",
+                                                                      "enum": [
+                                                                        "HS_25",
+                                                                        "HS_38",
+                                                                        "HS_51",
+                                                                        "HS_01",
+                                                                        "SH_31",
+                                                                        "SH_32",
+                                                                        "SH_33",
+                                                                        "SH_35",
+                                                                        "SHK_1",
+                                                                        "SHK_2"
+                                                                      ]
+                                                                    }
+                                                                  }
+                                                                }
+                                                              }
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    },
+                                                    "ncrptdKey": {
+                                                      "type": "array",
+                                                      "items": {
+                                                        "type": "integer"
+                                                      }
+                                                    }
+                                                  }
+                                                },
+                                                "kek": {
+                                                  "type": "object",
+                                                  "id": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:KEK7",
+                                                  "properties": {
+                                                    "vrsn": {
+                                                      "type": "number"
+                                                    },
+                                                    "keyNcrptnAlgo": {
+                                                      "type": "object",
+                                                      "id": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:AlgorithmIdentification29",
+                                                      "properties": {
+                                                        "algo": {
+                                                          "type": "string",
+                                                          "enum": [
+                                                            "EA_2_C",
+                                                            "E_3_DC",
+                                                            "DKP_9",
+                                                            "UKPT",
+                                                            "UKA_2",
+                                                            "EA_9_C",
+                                                            "EA_5_C",
+                                                            "DA_12",
+                                                            "DA_19",
+                                                            "DA_25",
+                                                            "N_108",
+                                                            "EA_5_R",
+                                                            "EA_9_R",
+                                                            "EA_2_R",
+                                                            "E_3_DR",
+                                                            "E_36_C",
+                                                            "E_36_R",
+                                                            "SD_5_C",
+                                                            "UKA_1",
+                                                            "UKA_3"
+                                                          ]
+                                                        },
+                                                        "param": {
+                                                          "type": "object",
+                                                          "id": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:Parameter12",
+                                                          "properties": {
+                                                            "ncrptnFrmt": {
+                                                              "type": "string",
+                                                              "enum": [
+                                                                "TR_31",
+                                                                "TR_34",
+                                                                "I_238"
+                                                              ]
+                                                            },
+                                                            "initlstnVctr": {
+                                                              "type": "array",
+                                                              "items": {
+                                                                "type": "integer"
+                                                              }
+                                                            },
+                                                            "bpddg": {
+                                                              "type": "string",
+                                                              "enum": [
+                                                                "LNGT",
+                                                                "NUL_8",
+                                                                "NULG",
+                                                                "NULL",
+                                                                "RAND"
+                                                              ]
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    },
+                                                    "ncrptdKey": {
+                                                      "type": "array",
+                                                      "items": {
+                                                        "type": "integer"
+                                                      }
+                                                    },
+                                                    "kekid": {
+                                                      "type": "object",
+                                                      "$ref": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:KEKIdentifier2"
+                                                    }
+                                                  }
+                                                },
+                                                "keyIdr": {
+                                                  "type": "object",
+                                                  "$ref": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:KEKIdentifier2"
+                                                }
+                                              }
+                                            }
+                                          },
+                                          "ncrptdCntt": {
+                                            "type": "object",
+                                            "id": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:EncryptedContent6",
+                                            "properties": {
+                                              "cnttTp": {
+                                                "type": "string",
+                                                "enum": [
+                                                  "DATA",
+                                                  "SIGN",
+                                                  "EVLP",
+                                                  "DGST",
+                                                  "AUTH"
+                                                ]
+                                              },
+                                              "cnttNcrptnAlgo": {
+                                                "type": "object",
+                                                "$ref": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:AlgorithmIdentification29"
+                                              },
+                                              "ncrptdData": {
+                                                "type": "array",
+                                                "items": {
+                                                  "type": "integer"
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      },
+                                      "authntcdData": {
+                                        "type": "object",
+                                        "id": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:AuthenticatedData6",
+                                        "properties": {
+                                          "vrsn": {
+                                            "type": "number"
+                                          },
+                                          "rcpt": {
+                                            "type": "array",
+                                            "items": {
+                                              "type": "object",
+                                              "$ref": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:Recipient8Choice"
+                                            }
+                                          },
+                                          "ncpsltdCntt": {
+                                            "type": "object",
+                                            "id": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:EncapsulatedContent3",
+                                            "properties": {
+                                              "cnttTp": {
+                                                "type": "string",
+                                                "enum": [
+                                                  "DATA",
+                                                  "SIGN",
+                                                  "EVLP",
+                                                  "DGST",
+                                                  "AUTH"
+                                                ]
+                                              },
+                                              "cntt": {
+                                                "type": "array",
+                                                "items": {
+                                                  "type": "integer"
+                                                }
+                                              }
+                                            }
+                                          },
+                                          "mac": {
+                                            "type": "array",
+                                            "items": {
+                                              "type": "integer"
+                                            }
+                                          },
+                                          "macalgo": {
+                                            "type": "object",
+                                            "id": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:AlgorithmIdentification22",
+                                            "properties": {
+                                              "algo": {
+                                                "type": "string",
+                                                "enum": [
+                                                  "MACC",
+                                                  "MCCS",
+                                                  "CMA_1",
+                                                  "MCC_1",
+                                                  "CMA_9",
+                                                  "CMA_5",
+                                                  "CMA_2",
+                                                  "CM_31",
+                                                  "CM_32",
+                                                  "CM_33",
+                                                  "MCS_3",
+                                                  "CCA_1",
+                                                  "CCA_2",
+                                                  "CCA_3"
+                                                ]
+                                              },
+                                              "param": {
+                                                "type": "object",
+                                                "id": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:Parameter7",
+                                                "properties": {
+                                                  "initlstnVctr": {
+                                                    "type": "array",
+                                                    "items": {
+                                                      "type": "integer"
+                                                    }
+                                                  },
+                                                  "bpddg": {
+                                                    "type": "string",
+                                                    "enum": [
+                                                      "LNGT",
+                                                      "NUL_8",
+                                                      "NULG",
+                                                      "NULL",
+                                                      "RAND"
+                                                    ]
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      },
+                                      "sgndData": {
+                                        "type": "object",
+                                        "id": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:SignedData5",
+                                        "properties": {
+                                          "vrsn": {
+                                            "type": "number"
+                                          },
+                                          "dgstAlgo": {
+                                            "type": "array",
+                                            "items": {
+                                              "type": "object",
+                                              "id": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:AlgorithmIdentification21",
+                                              "properties": {
+                                                "algo": {
+                                                  "type": "string",
+                                                  "enum": [
+                                                    "HS_25",
+                                                    "HS_38",
+                                                    "HS_51",
+                                                    "HS_01",
+                                                    "SH_31",
+                                                    "SH_32",
+                                                    "SH_33",
+                                                    "SH_35",
+                                                    "SHK_1",
+                                                    "SHK_2"
+                                                  ]
+                                                }
+                                              }
+                                            }
+                                          },
+                                          "ncpsltdCntt": {
+                                            "type": "object",
+                                            "$ref": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:EncapsulatedContent3"
+                                          },
+                                          "cert": {
+                                            "type": "array",
+                                            "items": {
+                                              "type": "array",
+                                              "items": {
+                                                "type": "integer"
+                                              }
+                                            }
+                                          },
+                                          "sgnr": {
+                                            "type": "array",
+                                            "items": {
+                                              "type": "object",
+                                              "id": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:Signer4",
+                                              "properties": {
+                                                "vrsn": {
+                                                  "type": "number"
+                                                },
+                                                "sgnrId": {
+                                                  "type": "object",
+                                                  "$ref": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:Recipient5Choice"
+                                                },
+                                                "dgstAlgo": {
+                                                  "type": "object",
+                                                  "$ref": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:AlgorithmIdentification21"
+                                                },
+                                                "sgndAttrbts": {
+                                                  "type": "array",
+                                                  "items": {
+                                                    "type": "object",
+                                                    "id": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:GenericInformation1",
+                                                    "properties": {
+                                                      "nm": {
+                                                        "type": "string"
+                                                      },
+                                                      "val": {
+                                                        "type": "string"
+                                                      }
+                                                    }
+                                                  }
+                                                },
+                                                "sgntrAlgo": {
+                                                  "type": "object",
+                                                  "id": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:AlgorithmIdentification20",
+                                                  "properties": {
+                                                    "algo": {
+                                                      "type": "string",
+                                                      "enum": [
+                                                        "ERS_2",
+                                                        "ERS_1",
+                                                        "RPSS",
+                                                        "ECC_5",
+                                                        "ECC_1",
+                                                        "ECC_4",
+                                                        "ECC_2",
+                                                        "ECC_3",
+                                                        "ERS_3",
+                                                        "ECP_2",
+                                                        "ECP_3",
+                                                        "ECP_5"
+                                                      ]
+                                                    },
+                                                    "param": {
+                                                      "type": "object",
+                                                      "id": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:Parameter11",
+                                                      "properties": {
+                                                        "dgstAlgo": {
+                                                          "type": "string",
+                                                          "enum": [
+                                                            "HS_25",
+                                                            "HS_38",
+                                                            "HS_51",
+                                                            "HS_01",
+                                                            "SH_31",
+                                                            "SH_32",
+                                                            "SH_33",
+                                                            "SH_35",
+                                                            "SHK_1",
+                                                            "SHK_2"
+                                                          ]
+                                                        },
+                                                        "mskGnrtrAlgo": {
+                                                          "type": "object",
+                                                          "id": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:AlgorithmIdentification12",
+                                                          "properties": {
+                                                            "algo": {
+                                                              "type": "string",
+                                                              "enum": [
+                                                                "MGF_1"
+                                                              ]
+                                                            },
+                                                            "param": {
+                                                              "type": "object",
+                                                              "id": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:Parameter5",
+                                                              "properties": {
+                                                                "dgstAlgo": {
+                                                                  "type": "string",
+                                                                  "enum": [
+                                                                    "HS_25",
+                                                                    "HS_38",
+                                                                    "HS_51",
+                                                                    "HS_01"
+                                                                  ]
+                                                                }
+                                                              }
+                                                            }
+                                                          }
+                                                        },
+                                                        "saltLngth": {
+                                                          "type": "number"
+                                                        },
+                                                        "trlrFld": {
+                                                          "type": "number"
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                },
+                                                "sgntr": {
+                                                  "type": "array",
+                                                  "items": {
+                                                    "type": "integer"
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      },
+                                      "dgstdData": {
+                                        "type": "object",
+                                        "id": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:DigestedData5",
+                                        "properties": {
+                                          "vrsn": {
+                                            "type": "number"
+                                          },
+                                          "dgstAlgo": {
+                                            "type": "object",
+                                            "$ref": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:AlgorithmIdentification21"
+                                          },
+                                          "ncpsltdCntt": {
+                                            "type": "object",
+                                            "$ref": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:EncapsulatedContent3"
+                                          },
+                                          "dgst": {
+                                            "type": "array",
+                                            "items": {
+                                              "type": "integer"
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  },
+                                  "keyChckVal": {
+                                    "type": "array",
+                                    "items": {
+                                      "type": "integer"
+                                    }
+                                  },
+                                  "addtlMgmtInf": {
+                                    "type": "array",
+                                    "items": {
+                                      "type": "object",
+                                      "$ref": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:GenericInformation1"
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "assmnt": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "id": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:PointOfInteractionComponentAssessment1",
+                            "properties": {
+                              "tp": {
+                                "type": "string",
+                                "enum": [
+                                  "APPL",
+                                  "CERT",
+                                  "EVAL"
+                                ]
+                              },
+                              "assgnr": {
+                                "type": "array",
+                                "items": {
+                                  "type": "string"
+                                }
+                              },
+                              "dlvryDt": {
+                                "type": "integer",
+                                "format": "utc-millisec"
+                              },
+                              "xprtnDt": {
+                                "type": "integer",
+                                "format": "utc-millisec"
+                              },
+                              "nb": {
+                                "type": "string"
+                              }
+                            }
+                          }
+                        },
+                        "packg": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "id": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:PackageType1",
+                            "properties": {
+                              "packgId": {
+                                "type": "object",
+                                "$ref": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:GenericIdentification176"
+                              },
+                              "packgLngth": {
+                                "type": "number"
+                              },
+                              "offsetStart": {
+                                "type": "number"
+                              },
+                              "offsetEnd": {
+                                "type": "number"
+                              },
+                              "packgBlck": {
+                                "type": "array",
+                                "items": {
+                                  "type": "object",
+                                  "id": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:ExternallyDefinedData1",
+                                  "properties": {
+                                    "id": {
+                                      "type": "string"
+                                    },
+                                    "val": {
+                                      "type": "array",
+                                      "items": {
+                                        "type": "integer"
+                                      }
+                                    },
+                                    "prtctdVal": {
+                                      "type": "object",
+                                      "$ref": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:ContentInformationType23"
+                                    },
+                                    "tp": {
+                                      "type": "string"
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "card": {
+                "type": "object",
+                "id": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:PaymentCard30",
+                "properties": {
+                  "prtctdCardData": {
+                    "type": "object",
+                    "id": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:ContentInformationType22",
+                    "properties": {
+                      "cnttTp": {
+                        "type": "string",
+                        "enum": [
+                          "DATA",
+                          "SIGN",
+                          "EVLP",
+                          "DGST",
+                          "AUTH"
+                        ]
+                      },
+                      "envlpdData": {
+                        "type": "object",
+                        "$ref": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:EnvelopedData7"
+                      }
+                    }
+                  },
+                  "prvtCardData": {
+                    "type": "array",
+                    "items": {
+                      "type": "integer"
+                    }
+                  },
+                  "plainCardData": {
+                    "type": "object",
+                    "id": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:PlainCardData15",
+                    "properties": {
+                      "pan": {
+                        "type": "string"
+                      },
+                      "cardSeqNb": {
+                        "type": "string"
+                      },
+                      "fctvDt": {
+                        "type": "string"
+                      },
+                      "xpryDt": {
+                        "type": "string"
+                      },
+                      "svcCd": {
+                        "type": "string"
+                      },
+                      "trck1": {
+                        "type": "string"
+                      },
+                      "trck2": {
+                        "type": "string"
+                      },
+                      "trck3": {
+                        "type": "string"
+                      },
+                      "crdhldrNm": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "pmtAcctRef": {
+                    "type": "string"
+                  },
+                  "mskdPAN": {
+                    "type": "string"
+                  },
+                  "issrBIN": {
+                    "type": "string"
+                  },
+                  "cardCtryCd": {
+                    "type": "string"
+                  },
+                  "cardCcyCd": {
+                    "type": "string"
+                  },
+                  "cardPdctPrfl": {
+                    "type": "string"
+                  },
+                  "cardBrnd": {
+                    "type": "string"
+                  },
+                  "cardPdctTp": {
+                    "type": "string",
+                    "enum": [
+                      "COMM",
+                      "CONS"
+                    ]
+                  },
+                  "cardPdctSubTp": {
+                    "type": "string"
+                  },
+                  "intrnlCard": {
+                    "type": "boolean"
+                  },
+                  "allwdPdct": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "svcOptn": {
+                    "type": "string"
+                  },
+                  "addtlCardData": {
+                    "type": "string"
+                  }
+                }
+              },
+              "cstmrDvc": {
+                "type": "object",
+                "id": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:CustomerDevice1",
+                "properties": {
+                  "id": {
+                    "type": "string"
+                  },
+                  "tp": {
+                    "type": "string"
+                  },
+                  "prvdr": {
+                    "type": "string"
+                  }
+                }
+              },
+              "wllt": {
+                "type": "object",
+                "$ref": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:CustomerDevice1"
+              },
+              "pmtTkn": {
+                "type": "object",
+                "id": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:CardPaymentToken5",
+                "properties": {
+                  "tkn": {
+                    "type": "string"
+                  },
+                  "cardSeqNb": {
+                    "type": "string"
+                  },
+                  "tknXpryDt": {
+                    "type": "string"
+                  },
+                  "tknChrtc": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "tknRqstr": {
+                    "type": "object",
+                    "id": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:PaymentTokenIdentifiers1",
+                    "properties": {
+                      "prvdrId": {
+                        "type": "string"
+                      },
+                      "rqstrId": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "tknAssrncLvl": {
+                    "type": "number"
+                  },
+                  "tknAssrncData": {
+                    "type": "array",
+                    "items": {
+                      "type": "integer"
+                    }
+                  },
+                  "tknAssrncMtd": {
+                    "type": "string"
+                  },
+                  "tknInittdInd": {
+                    "type": "boolean"
+                  }
+                }
+              },
+              "crdhldr": {
+                "type": "object",
+                "id": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:Cardholder16",
+                "properties": {
+                  "id": {
+                    "type": "object",
+                    "id": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:PersonIdentification15",
+                    "properties": {
+                      "drvrLicNb": {
+                        "type": "string"
+                      },
+                      "drvrLicLctn": {
+                        "type": "string"
+                      },
+                      "drvrLicNm": {
+                        "type": "string"
+                      },
+                      "drvrId": {
+                        "type": "string"
+                      },
+                      "cstmrNb": {
+                        "type": "string"
+                      },
+                      "sclSctyNb": {
+                        "type": "string"
+                      },
+                      "alnRegnNb": {
+                        "type": "string"
+                      },
+                      "psptNb": {
+                        "type": "string"
+                      },
+                      "taxIdNb": {
+                        "type": "string"
+                      },
+                      "idntyCardNb": {
+                        "type": "string"
+                      },
+                      "mplyrIdNb": {
+                        "type": "string"
+                      },
+                      "mplyeeIdNb": {
+                        "type": "string"
+                      },
+                      "jobNb": {
+                        "type": "string"
+                      },
+                      "dept": {
+                        "type": "string"
+                      },
+                      "emailAdr": {
+                        "type": "string"
+                      },
+                      "dtAndPlcOfBirth": {
+                        "type": "object",
+                        "id": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:DateAndPlaceOfBirth1",
+                        "properties": {
+                          "birthDt": {
+                            "type": "integer",
+                            "format": "utc-millisec"
+                          },
+                          "prvcOfBirth": {
+                            "type": "string"
+                          },
+                          "cityOfBirth": {
+                            "type": "string"
+                          },
+                          "ctryOfBirth": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "othr": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "id": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:GenericIdentification4",
+                          "properties": {
+                            "id": {
+                              "type": "string"
+                            },
+                            "idTp": {
+                              "type": "string"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "nm": {
+                    "type": "string"
+                  },
+                  "lang": {
+                    "type": "string"
+                  },
+                  "bllgAdr": {
+                    "type": "object",
+                    "$ref": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:PostalAddress22"
+                  },
+                  "shppgAdr": {
+                    "type": "object",
+                    "$ref": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:PostalAddress22"
+                  },
+                  "tripNb": {
+                    "type": "string"
+                  },
+                  "vhcl": {
+                    "type": "object",
+                    "id": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:Vehicle1",
+                    "properties": {
+                      "vhclNb": {
+                        "type": "string"
+                      },
+                      "trlrNb": {
+                        "type": "string"
+                      },
+                      "vhclTag": {
+                        "type": "string"
+                      },
+                      "vhclTagNtryMd": {
+                        "type": "string",
+                        "enum": [
+                          "TAGC",
+                          "PHYS",
+                          "BRCD",
+                          "MGST",
+                          "CICC",
+                          "DFLE",
+                          "CTLS",
+                          "ECTL",
+                          "CDFL"
+                        ]
+                      },
+                      "unitNb": {
+                        "type": "string"
+                      },
+                      "rplcmntCar": {
+                        "type": "boolean"
+                      },
+                      "odmtr": {
+                        "type": "number"
+                      },
+                      "hbmtr": {
+                        "type": "number"
+                      },
+                      "trlrHrs": {
+                        "type": "string"
+                      },
+                      "refrHrs": {
+                        "type": "string"
+                      },
+                      "mntncId": {
+                        "type": "string"
+                      },
+                      "drvrOrVhclCard": {
+                        "type": "object",
+                        "id": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:PlainCardData17",
+                        "properties": {
+                          "pan": {
+                            "type": "string"
+                          },
+                          "trck1": {
+                            "type": "string"
+                          },
+                          "trck2": {
+                            "type": "string"
+                          },
+                          "trck3": {
+                            "type": "string"
+                          },
+                          "addtlCardData": {
+                            "type": "array",
+                            "items": {
+                              "type": "string"
+                            }
+                          },
+                          "ntryMd": {
+                            "type": "string",
+                            "enum": [
+                              "TAGC",
+                              "PHYS",
+                              "BRCD",
+                              "MGST",
+                              "CICC",
+                              "DFLE",
+                              "CTLS",
+                              "ECTL",
+                              "CDFL"
+                            ]
+                          }
+                        }
+                      },
+                      "addtlVhclData": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "id": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:Vehicle2",
+                          "properties": {
+                            "tp": {
+                              "type": "string"
+                            },
+                            "ntryMd": {
+                              "type": "string",
+                              "enum": [
+                                "TAGC",
+                                "PHYS",
+                                "BRCD",
+                                "MGST",
+                                "CICC",
+                                "DFLE",
+                                "CTLS",
+                                "ECTL",
+                                "CDFL"
+                              ]
+                            },
+                            "data": {
+                              "type": "string"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "authntcn": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "id": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:CardholderAuthentication13",
+                      "properties": {
+                        "authntcnMtd": {
+                          "type": "string",
+                          "enum": [
+                            "TOKA",
+                            "ADDB",
+                            "BYPS",
+                            "BIOM",
+                            "CDHI",
+                            "CRYP",
+                            "CSCV",
+                            "MANU",
+                            "MERC",
+                            "MOBL",
+                            "FPIN",
+                            "NPIN",
+                            "OTHR",
+                            "PPSG",
+                            "PSVE",
+                            "PSWD",
+                            "TOKP",
+                            "SCRT",
+                            "SCNL",
+                            "CSEC",
+                            "SNCT",
+                            "ADDS",
+                            "CPSG",
+                            "TOKN",
+                            "UKNW"
+                          ]
+                        },
+                        "authntcnXmptn": {
+                          "type": "string",
+                          "enum": [
+                            "LOWA",
+                            "MINT",
+                            "RECP",
+                            "SCPE",
+                            "SCAD",
+                            "TRAE",
+                            "PKGE",
+                            "TMBE"
+                          ]
+                        },
+                        "authntcnVal": {
+                          "type": "array",
+                          "items": {
+                            "type": "integer"
+                          }
+                        },
+                        "prtctdAuthntcnVal": {
+                          "type": "object",
+                          "$ref": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:ContentInformationType22"
+                        },
+                        "crdhldrOnLinePIN": {
+                          "type": "object",
+                          "id": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:OnLinePIN7",
+                          "properties": {
+                            "ncrptdPINBlck": {
+                              "type": "object",
+                              "$ref": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:ContentInformationType22"
+                            },
+                            "addtlInpt": {
+                              "type": "string"
+                            },
+                            "pinfrmt": {
+                              "type": "string",
+                              "enum": [
+                                "ISO_0",
+                                "ISO_1",
+                                "ISO_2",
+                                "ISO_3",
+                                "ISO_4",
+                                "ISO_5"
+                              ]
+                            }
+                          }
+                        },
+                        "crdhldrId": {
+                          "type": "object",
+                          "$ref": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:PersonIdentification15"
+                        },
+                        "adrVrfctn": {
+                          "type": "object",
+                          "id": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:AddressVerification1",
+                          "properties": {
+                            "adrDgts": {
+                              "type": "string"
+                            },
+                            "pstlCdDgts": {
+                              "type": "string"
+                            }
+                          }
+                        },
+                        "authntcnTp": {
+                          "type": "string"
+                        },
+                        "authntcnLvl": {
+                          "type": "string"
+                        },
+                        "authntcnRslt": {
+                          "type": "string",
+                          "enum": [
+                            "DENY",
+                            "MRCH",
+                            "CARD",
+                            "AUTH",
+                            "CRPT",
+                            "UCRP"
+                          ]
+                        },
+                        "authntcnAddtlInf": {
+                          "type": "object",
+                          "$ref": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:ExternallyDefinedData1"
+                        }
+                      }
+                    }
+                  },
+                  "txVrfctnRslt": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "id": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:TransactionVerificationResult4",
+                      "properties": {
+                        "mtd": {
+                          "type": "string",
+                          "enum": [
+                            "NPIN",
+                            "PPSG",
+                            "PSWD",
+                            "SCRT",
+                            "SCNL",
+                            "SNCT",
+                            "CPSG",
+                            "ADDB",
+                            "BIOM",
+                            "CDHI",
+                            "CRYP",
+                            "CSCV",
+                            "PSVE",
+                            "CSEC",
+                            "ADDS",
+                            "MANU",
+                            "FPIN",
+                            "TOKP"
+                          ]
+                        },
+                        "vrfctnNtty": {
+                          "type": "string",
+                          "enum": [
+                            "ICCD",
+                            "AGNT",
+                            "MERC",
+                            "ACQR",
+                            "ISSR",
+                            "TRML"
+                          ]
+                        },
+                        "rslt": {
+                          "type": "string",
+                          "enum": [
+                            "FAIL",
+                            "MISS",
+                            "NOVF",
+                            "PART",
+                            "SUCC",
+                            "ERRR"
+                          ]
+                        },
+                        "addtlRslt": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  },
+                  "prsnlData": {
+                    "type": "string"
+                  },
+                  "mobData": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "id": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:MobileData2",
+                      "properties": {
+                        "mobCtryCd": {
+                          "type": "string"
+                        },
+                        "mobNtwkCd": {
+                          "type": "string"
+                        },
+                        "mobMskdMSISDN": {
+                          "type": "string"
+                        },
+                        "glctn": {
+                          "type": "object",
+                          "$ref": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:Geolocation1"
+                        },
+                        "snstvMobData": {
+                          "type": "object",
+                          "id": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:SensitiveMobileData1",
+                          "properties": {
+                            "msisdn": {
+                              "type": "string"
+                            },
+                            "imsi": {
+                              "type": "string"
+                            },
+                            "imei": {
+                              "type": "string"
+                            }
+                          }
+                        },
+                        "prtctdMobData": {
+                          "type": "object",
+                          "$ref": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:ContentInformationType22"
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "prtctdCrdhldrData": {
+                "type": "object",
+                "$ref": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:ContentInformationType22"
+              }
+            }
+          },
+          "cntxt": {
+            "type": "object",
+            "id": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:CardPaymentContext28",
+            "properties": {
+              "pmtCntxt": {
+                "type": "object",
+                "id": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:PaymentContext27",
+                "properties": {
+                  "cardPres": {
+                    "type": "boolean"
+                  },
+                  "crdhldrPres": {
+                    "type": "boolean"
+                  },
+                  "onLineCntxt": {
+                    "type": "boolean"
+                  },
+                  "attndncCntxt": {
+                    "type": "string",
+                    "enum": [
+                      "ATTD",
+                      "SATT",
+                      "UATT"
+                    ]
+                  },
+                  "txEnvt": {
+                    "type": "string",
+                    "enum": [
+                      "MERC",
+                      "PRIV",
+                      "PUBL"
+                    ]
+                  },
+                  "txChanl": {
+                    "type": "string",
+                    "enum": [
+                      "MAIL",
+                      "TLPH",
+                      "ECOM",
+                      "TVPY",
+                      "SECM",
+                      "MOBL",
+                      "MPOS"
+                    ]
+                  },
+                  "attndntMsgCpbl": {
+                    "type": "boolean"
+                  },
+                  "attndntLang": {
+                    "type": "string"
+                  },
+                  "cardDataNtryMd": {
+                    "type": "string",
+                    "enum": [
+                      "TAGC",
+                      "PHYS",
+                      "BRCD",
+                      "MGST",
+                      "CICC",
+                      "DFLE",
+                      "CTLS",
+                      "ECTL",
+                      "CDFL",
+                      "SICC",
+                      "UNKW",
+                      "QRCD",
+                      "OPTC"
+                    ]
+                  },
+                  "fllbckInd": {
+                    "type": "string",
+                    "enum": [
+                      "FFLB",
+                      "SFLB",
+                      "NFLB"
+                    ]
+                  },
+                  "spprtdOptn": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "enum": [
+                        "PART",
+                        "MSRV"
+                      ]
+                    }
+                  }
+                }
+              },
+              "saleCntxt": {
+                "type": "object",
+                "id": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:SaleContext4",
+                "properties": {
+                  "saleId": {
+                    "type": "string"
+                  },
+                  "saleRefNb": {
+                    "type": "string"
+                  },
+                  "saleRcncltnId": {
+                    "type": "string"
+                  },
+                  "cshrId": {
+                    "type": "string"
+                  },
+                  "cshrLang": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "shftNb": {
+                    "type": "string"
+                  },
+                  "cstmrOrdrReqFlg": {
+                    "type": "boolean"
+                  },
+                  "purchsOrdrNb": {
+                    "type": "string"
+                  },
+                  "invcNb": {
+                    "type": "string"
+                  },
+                  "dlvryNoteNb": {
+                    "type": "string"
+                  },
+                  "spnsrdMrchnt": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "id": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:Organisation26",
+                      "properties": {
+                        "cmonNm": {
+                          "type": "string"
+                        },
+                        "adr": {
+                          "type": "string"
+                        },
+                        "ctryCd": {
+                          "type": "string"
+                        },
+                        "mrchntCtgyCd": {
+                          "type": "string"
+                        },
+                        "regdIdr": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  },
+                  "spltPmt": {
+                    "type": "boolean"
+                  },
+                  "rmngAmt": {
+                    "type": "number"
+                  },
+                  "forceOnlnFlg": {
+                    "type": "boolean"
+                  },
+                  "reuseCardDataFlg": {
+                    "type": "boolean"
+                  },
+                  "allwdNtryMd": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "enum": [
+                        "TAGC",
+                        "PHYS",
+                        "BRCD",
+                        "MGST",
+                        "CICC",
+                        "DFLE",
+                        "CTLS",
+                        "ECTL",
+                        "CDFL",
+                        "SICC",
+                        "UNKW",
+                        "QRCD",
+                        "OPTC"
+                      ]
+                    }
+                  },
+                  "saleTknScp": {
+                    "type": "string",
+                    "enum": [
+                      "MULT",
+                      "SNGL"
+                    ]
+                  },
+                  "addtlSaleData": {
+                    "type": "string"
+                  }
+                }
+              },
+              "drctDbtCntxt": {
+                "type": "object",
+                "id": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:CardDirectDebit2",
+                "properties": {
+                  "dbtrId": {
+                    "type": "object",
+                    "id": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:Debtor4",
+                    "properties": {
+                      "dbtr": {
+                        "type": "object",
+                        "id": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:PartyIdentification178Choice",
+                        "properties": {
+                          "anyBIC": {
+                            "type": "string"
+                          },
+                          "prtryId": {
+                            "type": "object",
+                            "id": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:GenericIdentification36",
+                            "properties": {
+                              "id": {
+                                "type": "string"
+                              },
+                              "issr": {
+                                "type": "string"
+                              },
+                              "schmeNm": {
+                                "type": "string"
+                              }
+                            }
+                          },
+                          "nmAndAdr": {
+                            "type": "object",
+                            "id": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:NameAndAddress6",
+                            "properties": {
+                              "nm": {
+                                "type": "string"
+                              },
+                              "adr": {
+                                "type": "object",
+                                "id": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:PostalAddress2",
+                                "properties": {
+                                  "strtNm": {
+                                    "type": "string"
+                                  },
+                                  "pstCdId": {
+                                    "type": "string"
+                                  },
+                                  "twnNm": {
+                                    "type": "string"
+                                  },
+                                  "ctrySubDvsn": {
+                                    "type": "string"
+                                  },
+                                  "ctry": {
+                                    "type": "string"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "acctId": {
+                        "type": "object",
+                        "id": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:CashAccountIdentification7Choice",
+                        "properties": {
+                          "iban": {
+                            "type": "string"
+                          },
+                          "bban": {
+                            "type": "string"
+                          },
+                          "upic": {
+                            "type": "string"
+                          },
+                          "dmstAcct": {
+                            "type": "object",
+                            "id": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:SimpleIdentificationInformation4",
+                            "properties": {
+                              "id": {
+                                "type": "string"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "cdtrId": {
+                    "type": "object",
+                    "id": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:Creditor4",
+                    "properties": {
+                      "cdtr": {
+                        "type": "object",
+                        "$ref": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:PartyIdentification178Choice"
+                      },
+                      "regnId": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "mndtRltdInf": {
+                    "type": "object",
+                    "id": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:MandateRelatedInformation13",
+                    "properties": {
+                      "mndtId": {
+                        "type": "string"
+                      },
+                      "dtOfSgntr": {
+                        "type": "integer",
+                        "format": "utc-millisec"
+                      },
+                      "mndtImg": {
+                        "type": "array",
+                        "items": {
+                          "type": "integer"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "tx": {
+            "type": "object",
+            "id": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:CardPaymentTransaction92",
+            "properties": {
+              "txCaptr": {
+                "type": "boolean"
+              },
+              "txTp": {
+                "type": "string",
+                "enum": [
+                  "BALC",
+                  "CACT",
+                  "CRDP",
+                  "CAFH",
+                  "CAVR",
+                  "CSHW",
+                  "CSHD",
+                  "DEFR",
+                  "LOAD",
+                  "ORCR",
+                  "PINC",
+                  "QUCH",
+                  "RFND",
+                  "RESA",
+                  "VALC",
+                  "UNLD",
+                  "CAFT",
+                  "CAFL",
+                  "CIDD"
+                ]
+              },
+              "addtlSvc": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "AGGR",
+                    "DCCV",
+                    "GRTT",
+                    "LOYT",
+                    "NRES",
+                    "PUCO",
+                    "RECP",
+                    "SOAF",
+                    "VCAU",
+                    "INSI",
+                    "INSA",
+                    "CSHB",
+                    "INST",
+                    "NRFD"
+                  ]
+                }
+              },
+              "svcAttr": {
+                "type": "string",
+                "enum": [
+                  "IRES",
+                  "URES",
+                  "PRES",
+                  "ARES",
+                  "FREC",
+                  "RREC"
+                ]
+              },
+              "lastTxFlg": {
+                "type": "boolean"
+              },
+              "mrchntCtgyCd": {
+                "type": "string"
+              },
+              "cstmrCnsnt": {
+                "type": "array",
+                "items": {
+                  "type": "boolean"
+                }
+              },
+              "cardPrgrmmPropsd": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "cardPrgrmmApld": {
+                "type": "string"
+              },
+              "saleRefId": {
+                "type": "string"
+              },
+              "txId": {
+                "type": "object",
+                "id": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:TransactionIdentifier1",
+                "properties": {
+                  "txDtTm": {
+                    "type": "integer",
+                    "format": "utc-millisec"
+                  },
+                  "txRef": {
+                    "type": "string"
+                  }
+                }
+              },
+              "orgnlTx": {
+                "type": "object",
+                "id": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:CardPaymentTransaction101",
+                "properties": {
+                  "saleRefId": {
+                    "type": "string"
+                  },
+                  "txId": {
+                    "type": "object",
+                    "$ref": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:TransactionIdentifier1"
+                  },
+                  "initrTxId": {
+                    "type": "string"
+                  },
+                  "rcptTxId": {
+                    "type": "string"
+                  },
+                  "txTp": {
+                    "type": "string",
+                    "enum": [
+                      "BALC",
+                      "CACT",
+                      "CRDP",
+                      "CAFH",
+                      "CAVR",
+                      "CSHW",
+                      "CSHD",
+                      "DEFR",
+                      "LOAD",
+                      "ORCR",
+                      "PINC",
+                      "QUCH",
+                      "RFND",
+                      "RESA",
+                      "VALC",
+                      "UNLD",
+                      "CAFT",
+                      "CAFL",
+                      "CIDD"
+                    ]
+                  },
+                  "addtlSvc": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "enum": [
+                        "AGGR",
+                        "DCCV",
+                        "GRTT",
+                        "LOYT",
+                        "NRES",
+                        "PUCO",
+                        "RECP",
+                        "SOAF",
+                        "VCAU",
+                        "INSI",
+                        "INSA",
+                        "CSHB",
+                        "INST",
+                        "NRFD"
+                      ]
+                    }
+                  },
+                  "svcAttr": {
+                    "type": "string",
+                    "enum": [
+                      "IRES",
+                      "URES",
+                      "PRES",
+                      "ARES",
+                      "FREC",
+                      "RREC"
+                    ]
+                  },
+                  "cardDataNtryMd": {
+                    "type": "string",
+                    "enum": [
+                      "TAGC",
+                      "PHYS",
+                      "BRCD",
+                      "MGST",
+                      "CICC",
+                      "DFLE",
+                      "CTLS",
+                      "ECTL",
+                      "CDFL",
+                      "SICC",
+                      "UNKW",
+                      "QRCD",
+                      "OPTC"
+                    ]
+                  },
+                  "txRslt": {
+                    "type": "object",
+                    "id": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:CardPaymentTransactionResult3",
+                    "properties": {
+                      "authstnNtty": {
+                        "type": "object",
+                        "id": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:GenericIdentification90",
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "tp": {
+                            "type": "string",
+                            "enum": [
+                              "OPOI",
+                              "MERC",
+                              "ACCP",
+                              "ITAG",
+                              "ACQR",
+                              "CISS",
+                              "DLIS",
+                              "ICCA"
+                            ]
+                          },
+                          "issr": {
+                            "type": "string",
+                            "enum": [
+                              "MERC",
+                              "ACCP",
+                              "ITAG",
+                              "ACQR",
+                              "CISS",
+                              "TAXH"
+                            ]
+                          },
+                          "ctry": {
+                            "type": "string"
+                          },
+                          "shrtNm": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "rspnToAuthstn": {
+                        "type": "object",
+                        "id": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:ResponseType5",
+                        "properties": {
+                          "rspn": {
+                            "type": "string",
+                            "enum": [
+                              "APPR",
+                              "DECL",
+                              "PART"
+                            ]
+                          },
+                          "rspnRsn": {
+                            "type": "string"
+                          },
+                          "addtlRspnInf": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "authstnCd": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "poiid": {
+                    "type": "object",
+                    "$ref": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:GenericIdentification32"
+                  }
+                }
+              },
+              "initrTxId": {
+                "type": "string"
+              },
+              "rcncltnId": {
+                "type": "string"
+              },
+              "txDtls": {
+                "type": "object",
+                "id": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:CardPaymentTransactionDetails48",
+                "properties": {
+                  "ccy": {
+                    "type": "string"
+                  },
+                  "ttlAmt": {
+                    "type": "number"
+                  },
+                  "cmltvAmt": {
+                    "type": "number"
+                  },
+                  "amtQlfr": {
+                    "type": "string",
+                    "enum": [
+                      "ACTL",
+                      "ESTM",
+                      "MAXI",
+                      "DFLT",
+                      "RPLT",
+                      "INCR",
+                      "DECR",
+                      "RESD"
+                    ]
+                  },
+                  "dtldAmt": {
+                    "type": "object",
+                    "id": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:DetailedAmount15",
+                    "properties": {
+                      "amtGoodsAndSvcs": {
+                        "type": "number"
+                      },
+                      "cshBck": {
+                        "type": "number"
+                      },
+                      "grtty": {
+                        "type": "number"
+                      },
+                      "fees": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "id": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:DetailedAmount4",
+                          "properties": {
+                            "amt": {
+                              "type": "number"
+                            },
+                            "labl": {
+                              "type": "string"
+                            }
+                          }
+                        }
+                      },
+                      "rbt": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "$ref": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:DetailedAmount4"
+                        }
+                      },
+                      "valAddedTax": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "$ref": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:DetailedAmount4"
+                        }
+                      },
+                      "srchrg": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "$ref": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:DetailedAmount4"
+                        }
+                      }
+                    }
+                  },
+                  "reqdAmt": {
+                    "type": "number"
+                  },
+                  "authrsdAmt": {
+                    "type": "number"
+                  },
+                  "invcAmt": {
+                    "type": "number"
+                  },
+                  "vldtyDt": {
+                    "type": "integer",
+                    "format": "utc-millisec"
+                  },
+                  "onLineRsn": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "enum": [
+                        "RNDM",
+                        "ICCF",
+                        "MERF",
+                        "TRMF",
+                        "ISSF",
+                        "FRLT",
+                        "EXFL",
+                        "TAMT",
+                        "CBIN",
+                        "UBIN",
+                        "CPAN",
+                        "FLOW",
+                        "CRCY"
+                      ]
+                    }
+                  },
+                  "uattnddLvlCtgy": {
+                    "type": "string"
+                  },
+                  "acctTp": {
+                    "type": "string",
+                    "enum": [
+                      "CTDP",
+                      "CHCK",
+                      "CRDT",
+                      "CURR",
+                      "CDBT",
+                      "DFLT",
+                      "EPRS",
+                      "HEQL",
+                      "ISTL",
+                      "INVS",
+                      "LCDT",
+                      "MBNW",
+                      "MNMK",
+                      "MNMC",
+                      "MTGL",
+                      "RTRM",
+                      "RVLV",
+                      "SVNG",
+                      "STBD",
+                      "UVRL",
+                      "PRPD",
+                      "FLTC"
+                    ]
+                  },
+                  "ccyConvsRslt": {
+                    "type": "object",
+                    "id": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:CurrencyConversion17",
+                    "properties": {
+                      "accptdByCrdhldr": {
+                        "type": "boolean"
+                      },
+                      "convs": {
+                        "type": "object",
+                        "id": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:CurrencyConversion19",
+                        "properties": {
+                          "ccyConvsId": {
+                            "type": "string"
+                          },
+                          "trgtCcy": {
+                            "type": "object",
+                            "id": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:CurrencyDetails3",
+                            "properties": {
+                              "alphaCd": {
+                                "type": "string"
+                              },
+                              "nmrcCd": {
+                                "type": "string"
+                              },
+                              "dcml": {
+                                "type": "number"
+                              },
+                              "nm": {
+                                "type": "string"
+                              }
+                            }
+                          },
+                          "rsltgAmt": {
+                            "type": "number"
+                          },
+                          "xchgRate": {
+                            "type": "number"
+                          },
+                          "nvrtdXchgRate": {
+                            "type": "number"
+                          },
+                          "qtnDt": {
+                            "type": "integer",
+                            "format": "utc-millisec"
+                          },
+                          "vldUntil": {
+                            "type": "integer",
+                            "format": "utc-millisec"
+                          },
+                          "srcCcy": {
+                            "type": "object",
+                            "id": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:CurrencyDetails2",
+                            "properties": {
+                              "alphaCd": {
+                                "type": "string"
+                              },
+                              "nmrcCd": {
+                                "type": "string"
+                              },
+                              "dcml": {
+                                "type": "number"
+                              },
+                              "nm": {
+                                "type": "string"
+                              }
+                            }
+                          },
+                          "orgnlAmt": {
+                            "type": "object",
+                            "id": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:OriginalAmountDetails1",
+                            "properties": {
+                              "actlAmt": {
+                                "type": "number"
+                              },
+                              "minAmt": {
+                                "type": "number"
+                              },
+                              "maxAmt": {
+                                "type": "number"
+                              }
+                            }
+                          },
+                          "comssnDtls": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "id": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:Commission19",
+                              "properties": {
+                                "amt": {
+                                  "type": "number"
+                                },
+                                "addtlInf": {
+                                  "type": "string"
+                                }
+                              }
+                            }
+                          },
+                          "mrkUpDtls": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "id": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:Commission18",
+                              "properties": {
+                                "rate": {
+                                  "type": "number"
+                                },
+                                "addtlInf": {
+                                  "type": "string"
+                                }
+                              }
+                            }
+                          },
+                          "dclrtnDtls": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "id": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:ActionMessage7",
+                              "properties": {
+                                "msgDstn": {
+                                  "type": "string",
+                                  "enum": [
+                                    "CDSP",
+                                    "CRCP",
+                                    "MDSP",
+                                    "MRCP",
+                                    "CRDO"
+                                  ]
+                                },
+                                "infQlfr": {
+                                  "type": "string",
+                                  "enum": [
+                                    "CUSA",
+                                    "DISP",
+                                    "DOCT",
+                                    "ERRO",
+                                    "INPT",
+                                    "POIR",
+                                    "RCPT",
+                                    "SOND",
+                                    "STAT",
+                                    "VCHR"
+                                  ]
+                                },
+                                "frmt": {
+                                  "type": "string",
+                                  "enum": [
+                                    "BARC",
+                                    "MENT",
+                                    "MREF",
+                                    "SREF",
+                                    "TEXT",
+                                    "HTML"
+                                  ]
+                                },
+                                "msgCntt": {
+                                  "type": "string"
+                                },
+                                "msgCnttSgntr": {
+                                  "type": "object",
+                                  "id": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:ContentInformationType21",
+                                  "properties": {
+                                    "cnttTp": {
+                                      "type": "string",
+                                      "enum": [
+                                        "DATA",
+                                        "SIGN",
+                                        "EVLP",
+                                        "DGST",
+                                        "AUTH"
+                                      ]
+                                    },
+                                    "authntcdData": {
+                                      "type": "object",
+                                      "$ref": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:AuthenticatedData6"
+                                    },
+                                    "sgndData": {
+                                      "type": "object",
+                                      "$ref": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:SignedData5"
+                                    }
+                                  }
+                                },
+                                "outptBrcd": {
+                                  "type": "object",
+                                  "id": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:OutputBarcode1",
+                                  "properties": {
+                                    "brcdTp": {
+                                      "type": "string",
+                                      "enum": [
+                                        "COQR",
+                                        "C_128",
+                                        "C_025",
+                                        "C_039",
+                                        "EA_13",
+                                        "EAN_8",
+                                        "P_417",
+                                        "UPCA"
+                                      ]
+                                    },
+                                    "brcdVal": {
+                                      "type": "string"
+                                    },
+                                    "qrcdErrCrrctn": {
+                                      "type": "string",
+                                      "enum": [
+                                        "M_015",
+                                        "Q_025",
+                                        "H_030",
+                                        "L_007"
+                                      ]
+                                    },
+                                    "qrcdBinryVal": {
+                                      "type": "array",
+                                      "items": {
+                                        "type": "integer"
+                                      }
+                                    },
+                                    "qrcdVrsn": {
+                                      "type": "string"
+                                    },
+                                    "qrcdNcodgMd": {
+                                      "type": "string",
+                                      "enum": [
+                                        "ALFA",
+                                        "BINA",
+                                        "KANJ",
+                                        "NUME"
+                                      ]
+                                    }
+                                  }
+                                },
+                                "rspnReqrdFlg": {
+                                  "type": "boolean"
+                                },
+                                "minDispTm": {
+                                  "type": "number"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "instlmt": {
+                    "type": "object",
+                    "id": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:RecurringTransaction2",
+                    "properties": {
+                      "instlmtPlan": {
+                        "type": "array",
+                        "items": {
+                          "type": "string",
+                          "enum": [
+                            "EQPM",
+                            "NQPM",
+                            "DFRI"
+                          ]
+                        }
+                      },
+                      "planId": {
+                        "type": "string"
+                      },
+                      "seqNb": {
+                        "type": "number"
+                      },
+                      "prdUnit": {
+                        "type": "string",
+                        "enum": [
+                          "YEAR",
+                          "MNTH",
+                          "QURT",
+                          "MIAN",
+                          "WEEK",
+                          "DAIL",
+                          "TEND"
+                        ]
+                      },
+                      "instlmtPrd": {
+                        "type": "number"
+                      },
+                      "ttlNbOfPmts": {
+                        "type": "number"
+                      },
+                      "frstPmtDt": {
+                        "type": "integer",
+                        "format": "utc-millisec"
+                      },
+                      "ttlAmt": {
+                        "type": "object",
+                        "id": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:CurrencyAndAmount",
+                        "properties": {
+                          "value": {
+                            "type": "number"
+                          },
+                          "ccy": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "frstAmt": {
+                        "type": "number"
+                      },
+                      "chrgs": {
+                        "type": "number"
+                      }
+                    }
+                  },
+                  "aggtnTx": {
+                    "type": "object",
+                    "id": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:AggregationTransaction3",
+                    "properties": {
+                      "frstPmtDtTm": {
+                        "type": "integer",
+                        "format": "utc-millisec"
+                      },
+                      "lastPmtDtTm": {
+                        "type": "integer",
+                        "format": "utc-millisec"
+                      },
+                      "nbOfPmts": {
+                        "type": "number"
+                      },
+                      "indvPmt": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "id": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:DetailedAmount21",
+                          "properties": {
+                            "amt": {
+                              "type": "number"
+                            },
+                            "dtTm": {
+                              "type": "integer",
+                              "format": "utc-millisec"
+                            },
+                            "cardDataNtryMd": {
+                              "type": "string",
+                              "enum": [
+                                "TAGC",
+                                "PHYS",
+                                "BRCD",
+                                "MGST",
+                                "CICC",
+                                "DFLE",
+                                "CTLS",
+                                "ECTL",
+                                "CDFL",
+                                "SICC",
+                                "UNKW",
+                                "QRCD",
+                                "OPTC"
+                              ]
+                            },
+                            "labl": {
+                              "type": "string"
+                            },
+                            "iccrltdData": {
+                              "type": "array",
+                              "items": {
+                                "type": "integer"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "pdctCdSetId": {
+                    "type": "string"
+                  },
+                  "saleItm": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "id": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:Product6",
+                      "properties": {
+                        "itmId": {
+                          "type": "string"
+                        },
+                        "pdctCd": {
+                          "type": "string"
+                        },
+                        "addtlPdctCd": {
+                          "type": "string"
+                        },
+                        "unitOfMeasr": {
+                          "type": "string",
+                          "enum": [
+                            "PIEC",
+                            "TONS",
+                            "FOOT",
+                            "GBGA",
+                            "USGA",
+                            "GRAM",
+                            "INCH",
+                            "KILO",
+                            "PUND",
+                            "METR",
+                            "CMET",
+                            "MMET",
+                            "LITR",
+                            "CELI",
+                            "MILI",
+                            "GBOU",
+                            "USOU",
+                            "GBQA",
+                            "USQA",
+                            "GBPI",
+                            "USPI",
+                            "MILE",
+                            "KMET",
+                            "YARD",
+                            "SQKI",
+                            "HECT",
+                            "ARES",
+                            "SMET",
+                            "SCMT",
+                            "SMIL",
+                            "SQMI",
+                            "SQYA",
+                            "SQFO",
+                            "SQIN",
+                            "ACRE",
+                            "KWHO",
+                            "DGEU",
+                            "GGEU"
+                          ]
+                        },
+                        "pdctQty": {
+                          "type": "number"
+                        },
+                        "unitPric": {
+                          "type": "number"
+                        },
+                        "unitPricSgn": {
+                          "type": "boolean"
+                        },
+                        "pdctAmt": {
+                          "type": "number"
+                        },
+                        "pdctAmtSgn": {
+                          "type": "boolean"
+                        },
+                        "valAddedTax": {
+                          "type": "number"
+                        },
+                        "taxTp": {
+                          "type": "string"
+                        },
+                        "pdctDesc": {
+                          "type": "string"
+                        },
+                        "dlvryLctn": {
+                          "type": "string"
+                        },
+                        "dlvrySvc": {
+                          "type": "string",
+                          "enum": [
+                            "ATTL",
+                            "CARR",
+                            "CUST",
+                            "FULL",
+                            "SELF"
+                          ]
+                        },
+                        "saleChanl": {
+                          "type": "string"
+                        },
+                        "addtlPdctDesc": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  },
+                  "dlvryLctn": {
+                    "type": "string"
+                  },
+                  "addtlInf": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "$ref": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:ExternallyDefinedData1"
+                    }
+                  },
+                  "iccrltdData": {
+                    "type": "array",
+                    "items": {
+                      "type": "integer"
+                    }
+                  }
+                }
+              },
+              "mrchntRefData": {
+                "type": "string"
+              },
+              "acctFr": {
+                "type": "object",
+                "id": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:CardAccount15",
+                "properties": {
+                  "selctnMtd": {
+                    "type": "string",
+                    "enum": [
+                      "ACSL",
+                      "ENTR",
+                      "IMAC",
+                      "IMPL",
+                      "NOSL",
+                      "TPSL"
+                    ]
+                  },
+                  "selctdAcctTp": {
+                    "type": "string",
+                    "enum": [
+                      "CTDP",
+                      "CHCK",
+                      "CRDT",
+                      "CURR",
+                      "CDBT",
+                      "DFLT",
+                      "EPRS",
+                      "HEQL",
+                      "ISTL",
+                      "INVS",
+                      "LCDT",
+                      "MBNW",
+                      "MNMK",
+                      "MNMC",
+                      "MTGL",
+                      "RTRM",
+                      "RVLV",
+                      "SVNG",
+                      "STBD",
+                      "UVRL",
+                      "PRPD",
+                      "FLTC"
+                    ]
+                  },
+                  "acctNm": {
+                    "type": "string"
+                  },
+                  "acctOwnr": {
+                    "type": "object",
+                    "id": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:NameAndAddress3",
+                    "properties": {
+                      "nm": {
+                        "type": "string"
+                      },
+                      "adr": {
+                        "type": "object",
+                        "id": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:PostalAddress1",
+                        "properties": {
+                          "adrTp": {
+                            "type": "string",
+                            "enum": [
+                              "ADDR",
+                              "PBOX",
+                              "HOME",
+                              "BIZZ",
+                              "MLTO",
+                              "DLVY"
+                            ]
+                          },
+                          "adrLine": {
+                            "type": "array",
+                            "items": {
+                              "type": "string"
+                            }
+                          },
+                          "strtNm": {
+                            "type": "string"
+                          },
+                          "bldgNb": {
+                            "type": "string"
+                          },
+                          "pstCd": {
+                            "type": "string"
+                          },
+                          "twnNm": {
+                            "type": "string"
+                          },
+                          "ctrySubDvsn": {
+                            "type": "string"
+                          },
+                          "ctry": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "ccy": {
+                    "type": "string"
+                  },
+                  "acctIdr": {
+                    "type": "object",
+                    "id": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:AccountIdentification39Choice",
+                    "properties": {
+                      "card": {
+                        "type": "string"
+                      },
+                      "msisdn": {
+                        "type": "string"
+                      },
+                      "iban": {
+                        "type": "string"
+                      },
+                      "bban": {
+                        "type": "string"
+                      },
+                      "upic": {
+                        "type": "string"
+                      },
+                      "dmst": {
+                        "type": "string"
+                      },
+                      "othr": {
+                        "type": "string"
+                      },
+                      "email": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "svcr": {
+                    "type": "object",
+                    "id": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:PartyIdentification177Choice",
+                    "properties": {
+                      "anyBIC": {
+                        "type": "string"
+                      },
+                      "prtryId": {
+                        "type": "object",
+                        "id": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:GenericIdentification1",
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "schmeNm": {
+                            "type": "string"
+                          },
+                          "issr": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "acctTo": {
+                "type": "object",
+                "$ref": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:CardAccount15"
+              },
+              "addtlTxData": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "splmtryData": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "id": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:SupplementaryData1",
+              "properties": {
+                "plcAndNm": {
+                  "type": "string"
+                },
+                "envlp": {
+                  "type": "object",
+                  "id": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:SupplementaryDataEnvelope1",
+                  "properties": {
+                    "any": {
+                      "type": "any"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "sctyTrlr": {
+        "type": "object",
+        "id": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:ContentInformationType24",
+        "properties": {
+          "cnttTp": {
+            "type": "string",
+            "enum": [
+              "DATA",
+              "SIGN",
+              "EVLP",
+              "DGST",
+              "AUTH"
+            ]
+          },
+          "authntcdData": {
+            "type": "object",
+            "$ref": "urn:jsonschema:za:co:transactionjunction:model:acceptorauthrequest:AuthenticatedData6"
+          }
+        }
+      }
+    }
+  }
+}

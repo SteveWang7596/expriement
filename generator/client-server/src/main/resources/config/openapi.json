@@ -1,0 +1,133 @@
+{
+  "openapi" : "3.0.2",
+  "info" : {
+    "contact" : {
+      "email" : "cardpaymnetapi-integration@switch.tj",
+      "name" : "Transaction Junction",
+      "url" : "http://www.transactionjunction.co.za"
+    },
+    "description" : "# Overview\nThis interface must be implemented to accepts and send Iso20022 financial transactions to and from TJ.\n",
+    "title" : "Card Payment API",
+    "version" : "1.0.00"
+  },
+  "servers" : [ {
+    "url" : "/"
+  } ],
+  "security" : [ {
+    "ApiKey" : [ ]
+  } ],
+  "paths" : {
+    "/v1/AcceptorAuthorisation" : {
+      "post" : {
+        "operationId" : "authorisation",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/AcceptorAuthoisationRequestV09"
+              }
+            },
+            "application/xml" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/AcceptorAuthoisationRequestV09"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/AcceptorAuthorisationResponseV09"
+                }
+              },
+              "application/xml" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/AcceptorAuthorisationResponseV09"
+                }
+              }
+            },
+            "description" : "Transaction Reversal"
+          },
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/AcceptorAuthorisationResponseV09"
+                }
+              }
+            },
+            "description" : "Error information"
+          }
+        },
+        "summary" : "The AcceptorAuthorisationRequest message is sent by an acceptor (or its agent) to the acquirer (or its agent), to check with the issuer (or its agent) that the account associated to the card has the resources to fund the payment. This checking will include validation of the card data and any additional transaction data provided.",
+        "x-contentType" : "application/json",
+        "x-accepts" : "application/json"
+      }
+    }
+  },
+  "components" : {
+    "schemas" : {
+      "AcceptorAuthoisationRequestV09" : {
+        "example" : {
+          "securityTrailer" : "securityTrailer",
+          "authorisationRequest" : "authorisationRequest",
+          "header" : "header"
+        },
+        "properties" : {
+          "header" : {
+            "type" : "string"
+          },
+          "authorisationRequest" : {
+            "type" : "string"
+          },
+          "securityTrailer" : {
+            "type" : "string"
+          }
+        },
+        "type" : "object"
+      },
+      "AcceptorAuthorisationResponseV09" : {
+        "example" : {
+          "securityTrailer" : "securityTrailer",
+          "header" : "header",
+          "authoirsationResponse" : "authoirsationResponse"
+        },
+        "properties" : {
+          "header" : {
+            "type" : "string"
+          },
+          "authoirsationResponse" : {
+            "type" : "string"
+          },
+          "securityTrailer" : {
+            "type" : "string"
+          }
+        },
+        "type" : "object"
+      },
+      "Header" : {
+        "type" : "string"
+      },
+      "AuthorisationRequest" : {
+        "type" : "string"
+      },
+      "AuthorisationResponse" : {
+        "type" : "string"
+      },
+      "SecurityTrailer" : {
+        "type" : "string"
+      }
+    },
+    "securitySchemes" : {
+      "ApiKey" : {
+        "description" : "The API key value will be provided by Transaction Junction. It should be provided in the header X-Api-Key.",
+        "in" : "header",
+        "name" : "X-Api-Key",
+        "type" : "apiKey"
+      }
+    }
+  }
+}

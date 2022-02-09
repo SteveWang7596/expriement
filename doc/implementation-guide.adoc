@@ -1,0 +1,95 @@
+:app_name: StellrFusionProviderJunction
+:current_version: 1.0.00
+image::assets/images/tj.png[transaction logo]
+= Implementation Guide - {app_name} {current_version}
+:toc:
+:sectnums:
+:numbered:
+:icons:
+:data-uri:
+
+
+== Introduction
+
+The {app_name} application is a provider junction that allows integration to StellrFusion according to the specification provided on https://docs.stellr-net.com/reference.
+
+== Configuration:files
+
+The standard configuration for junctions is required, briefly:
+
+*	config.json
+*	logback.xml
+*	cluster.xml
+
+NOTE: Configuration template files can be found in {app_name}'s bin/config-templates directory.
+
+The rest of this section will provide more details on each configuration file.
+
+=== config.json
+
+This file is standard, the template file should be used as-is.
+
+=== logback.xml
+
+This file is mostly standard, the template file should probably be used as-is.
+
+=== cluster.xml
+
+This file is standard, the template file should be used as-is.
+
+== Configuration:junction instances
+
+Configure the instance as usual in the database.
+
+=== Optional instance properties
+
+[cols="1,1", options="header"]
+|===
+|property key
+|value - meaning or example
+
+|optional_porperty_name
+|A description of what this property does. It has a default value of 'cinnamon'.
+
+|another_property_name
+|Another description but this time of another property. It has a default value of 'pancake'.
+
+|===
+
+=== Required instance properties
+
+[cols="1,1", options="header"]
+|===
+|property key
+|value - meaning or example
+
+|required_property_name
+|A description of what this property does.
+
+|another_required_property_name
+|Another description for another required property. Pancakes should be required.
+
+|===
+
+=== Example SQL script for configuring an instance
+
+----
+EXEC tj_portalbase_addinstance
+	'template_1',         	--instance_id
+	'provider',             --role
+	NULL,                   --pin_translation_key_name
+	NULL,                   --key_exchange_key_name
+	'TemplateJunction',   	--handler_name
+	'TwoByteHeaderFramer',  --framer_name
+	NULL,            		--comms_name
+	NULL,            		--local_host
+	NULL,                   --local_port
+	NULL,                   --remote_host
+	NULL                    --remote_port
+GO
+
+EXEC tj_portalbase_addinstanceproperty 'template_1', 'no_of_instances', 1
+GO
+----
+
+Last built on {localdatetime}

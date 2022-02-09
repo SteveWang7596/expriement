@@ -1,0 +1,42 @@
+{
+  "AcceptorAuthoisationRequestV09": {
+    "type": "object",
+    "properties": {
+      "header": {
+        "$ref": "#/Header"
+      },
+      "authorisationRequest": {
+        "$ref": "#/AuthorisationRequest"
+      },
+      "securityTrailer": {
+        "$ref": "#/SecurityTrailer"
+      }
+    }
+  },
+  "AcceptorAuthorisationResponseV09": {
+    "type": "object",
+    "properties": {
+      "header": {
+        "$ref": "#/Header"
+      },
+      "authoirsationResponse": {
+        "$ref": "#/AuthorisationResponse"
+      },
+      "securityTrailer": {
+        "$ref": "#/SecurityTrailer"
+      }
+    }
+  },
+  "Header": {
+    "type": "string"
+  },
+  "AuthorisationRequest": {
+    "type": "string"
+  },
+  "AuthorisationResponse": {
+    "type": "string"
+  },
+  "SecurityTrailer": {
+    "type": "string"
+  }
+}
